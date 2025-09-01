@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Minimal CRUD</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; max-width: 600px; margin: auto; }
+    input, button { margin: 5px 0; padding: 8px; width: 100%; }
+    .section { margin-bottom: 20px; }
+    .response { white-space: pre-wrap; background: #f4f4f4; padding: 10px; border: 1px solid #ccc; }
+  </style>
+</head>
+<body>
+
+  <h2>CREATE (POST)</h2>
+  <div class="section">
+    <input id="createName" placeholder="Name" />
+    <input id="createJob" placeholder="Job" />
+    <button onclick="createUser()">Create User</button>
+    <div id="createOutput" class="response"></div>
+  </div>
+
+  <h2>READ (GET)</h2>
+  <div class="section">
+    <input id="getUserId" placeholder="User ID" />
+    <button onclick="getUser()">Fetch User</button>
+    <div id="getOutput" class="response"></div>
+  </div>
+
+  <h2>UPDATE (PUT / PATCH)</h2>
+  <div class="section">
+    <input id="updateId" placeholder="User ID" />
+    <input id="updateName" placeholder="New Name" />
+    <input id="updateJob" placeholder="New Job" />
+    <button onclick="updateUser('PUT')">Full Update (PUT)</button>
+    <button onclick="updateUser('PATCH')">Partial Update (PATCH)</button>
+    <div id="updateOutput" class="response"></div>
+  </div>
+
+  <h2>FETCH ALL (GET)</h2>
+  <div class="section">
+    <button onclick="fetchAllUsers()">Fetch All Users (page 1)</button>
+    <div id="allOutput" class="response"></div>
+  </div>
+
+  <h2>DELETE</h2>
+  <div class="section">
+    <input id="deleteId" placeholder="User ID" />
+    <button onclick="deleteUser()">Delete User</button>
+    <div id="deleteOutput" class="response"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
